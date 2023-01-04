@@ -1,0 +1,1 @@
+(()=>{"use strict";chrome.tabs.onUpdated.addListener(((e,s)=>{if(s&&void 0!==s.url&&s.url.includes("youtube.com/watch")){const t=s.url.split("?")[1],a=new URLSearchParams(t);chrome.tabs.sendMessage(e,{type:"NEW",videoId:a.get("v")})}}))})();
